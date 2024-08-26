@@ -15,6 +15,18 @@
 pip install kasperskytip
 ```
 
+# ▶️ Getting Started
+
+```python
+import kasperskytip
+
+ks = kasperskytip.kaspersky_tip()
+site = ks.search("google.com")
+
+print(site.is_safe)
+>>> True
+```
+
 # 📝 Usage
 
 Please, see the usage examples on [readthedocs](https://kaspersky-tip.readthedocs.io/en/latest/)
