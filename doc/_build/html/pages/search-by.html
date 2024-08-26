@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Search in API &mdash; Kaspersky TIP API 1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=f2a433a1"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Uploading a file for analysis" href="upload-file.html" />
+    <link rel="prev" title="Kaspersky TIP API documentation" href="../index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Kaspersky TIP API
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Search in API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#arguments">📦 Arguments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#file-search-by-hash">📄 File search by hash</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#returns"><strong>Returns</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#host-search-by-domain-or-url">🌐 Host search by domain or url</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1"><strong>Returns</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#search-by-ip">🌐 Search by IP</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2"><strong>Returns</strong></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="upload-file.html">Uploading a file for analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="exceptions.html">Exceptions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Kaspersky TIP API</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Search in API</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/pages/search-by.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="search-in-api">
+<h1>Search in API<a class="headerlink" href="#search-in-api" title="Link to this heading"></a></h1>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">search</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">silent</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">kaspersky_response</span><span class="p">:</span>
+</pre></div>
+</div>
+<section id="arguments">
+<h2>📦 Arguments<a class="headerlink" href="#arguments" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>query (str): The query to search for.</p></li>
+<li><p>silent (bool): Whether a silent scan should be requested.</p></li>
+</ul>
+</section>
+<section id="file-search-by-hash">
+<h2>📄 File search by hash<a class="headerlink" href="#file-search-by-hash" title="Link to this heading"></a></h2>
+<p>You can search for files using a hash. The following hashes are available for searching:</p>
+<ul class="simple">
+<li><p>MD5</p></li>
+<li><p>SHA1</p></li>
+<li><p>SHA256</p></li>
+</ul>
+<section id="returns">
+<h3><strong>Returns</strong><a class="headerlink" href="#returns" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>is_safe (bool): Whether the file is safe or not.</p></li>
+<li><p>status (str): The file status.</p></li>
+<li><p>filetype (str): The size of the file.</p></li>
+<li><p>first_seen (datetime): The first time the file was seen.</p></li>
+<li><p>last_seen (datetime): The last time the file was seen.</p></li>
+<li><p>hits_count (int): The number of hits the file has.</p></li>
+<li><p>threats (list): A list of threats associated with the hash.</p></li>
+<li><p>strings (list): A list of strings associated with the hash.</p></li>
+</ul>
+<p>Example of search with SHA256:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">kasperskytip</span>
+
+<span class="n">ks</span> <span class="o">=</span> <span class="n">kasperskytip</span><span class="o">.</span><span class="n">kaspersky_tip</span><span class="p">()</span>
+<span class="n">file</span> <span class="o">=</span> <span class="n">ks</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s2">&quot;C653365657FBF65429AD845D0A0D93106E972ACA929739560FF4B4796BD2BE08&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">file</span><span class="o">.</span><span class="n">is_safe</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="kc">False</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">file</span><span class="o">.</span><span class="n">status</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">Malware</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">file</span><span class="o">.</span><span class="n">filetype</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">dll</span> <span class="n">x32</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">file</span><span class="o">.</span><span class="n">first_seen</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="mi">2020</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">10</span> <span class="mi">14</span><span class="p">:</span><span class="mi">23</span><span class="p">:</span><span class="mi">00</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">file</span><span class="o">.</span><span class="n">last_seen</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="mi">2021</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">25</span> <span class="mi">03</span><span class="p">:</span><span class="mi">23</span><span class="p">:</span><span class="mi">00</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">file</span><span class="o">.</span><span class="n">hits_count</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="mi">10</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">file</span><span class="o">.</span><span class="n">threats</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="p">[</span><span class="s1">&#39;Trojan-Banker.Win32.Cridex.okj&#39;</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">file</span><span class="o">.</span><span class="n">strings</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="p">[</span><span class="s1">&#39;DD$j@j&#39;</span><span class="p">,</span> <span class="s1">&#39;@3|LPkg&#39;</span><span class="p">,</span> <span class="s1">&#39;@.reloc&#39;</span><span class="p">,</span> <span class="s1">&#39;8l(TPr&#39;</span><span class="p">,</span> <span class="s1">&#39;D$H9D$&#39;</span><span class="p">,</span> <span class="s1">&#39;D$ ludef&#39;</span><span class="p">,</span> <span class="s1">&#39;998X+*S&#39;</span><span class="p">,</span> <span class="s1">&#39;FF9i2z{&#39;</span><span class="p">,</span> <span class="s1">&#39;@Pm.&amp;t&#39;</span><span class="p">,</span> <span class="s1">&#39;Ddqlt$&#39;</span><span class="p">,</span> <span class="s1">&#39;QQSVj8j@&#39;</span><span class="p">,</span> <span class="s1">&#39;9I_</span><span class="se">\t</span><span class="s1">Gv&#39;</span><span class="p">,</span> <span class="s1">&#39;&amp;FoA^F9&#39;</span><span class="p">,</span> <span class="s1">&#39;u</span><span class="se">\x0c</span><span class="s1">9~</span><span class="se">\x0c</span><span class="s1">u</span><span class="se">\r</span><span class="s1">j&#39;</span><span class="p">,</span> <span class="s1">&#39;u</span><span class="se">\x0c</span><span class="s1">9^</span><span class="se">\x0c</span><span class="s1">u&#39;</span><span class="p">,</span> <span class="s1">&#39;PW5N~&lt;A&#39;</span><span class="p">,</span> <span class="s1">&#39;&gt;^@`tw&#39;</span><span class="p">,</span> <span class="s1">&#39;VDD$D$&#39;</span><span class="p">,</span> <span class="s1">&#39;u/9T$ u)&#39;</span><span class="p">,</span> <span class="s1">&#39;Wu</span><span class="se">\r</span><span class="s1">VVS&#39;</span><span class="p">,</span> <span class="s1">&#39;;u</span><span class="se">\x0c</span><span class="s1">t.;&#39;</span><span class="p">,</span> <span class="s1">&#39;uv</span><span class="se">\\</span><span class="s1">Wu@&#39;</span><span class="p">,</span> <span class="s1">&#39;#:@o</span><span class="se">\\</span><span class="s1">R&#39;</span><span class="p">,</span> <span class="s1">&#39;)`t{.p`k&gt;F&#39;</span><span class="p">,</span> <span class="s1">&#39;7rr</span><span class="se">\x0c</span><span class="s1">uY&#39;</span><span class="p">,</span> <span class="s1">&#39;;K+HI$&#39;</span><span class="p">,</span> <span class="s1">&#39;M</span><span class="se">\x0c</span><span class="s1">;J</span><span class="se">\x0c</span><span class="s1">r&#39;</span><span class="p">,</span> <span class="s1">&#39;&lt; t3&lt;</span><span class="se">\t</span><span class="s1">t/&#39;</span><span class="p">,</span> <span class="s1">&#39;t</span><span class="se">\r</span><span class="s1">f;1u&#39;</span><span class="p">,</span> <span class="s1">&#39;`.rdata&#39;</span><span class="p">,</span> <span class="s1">&#39;u^0&quot;Yo&#39;</span><span class="p">,</span> <span class="s1">&#39;uG</span><span class="se">\x0c</span><span class="s1">ML5F&#39;</span><span class="p">,</span> <span class="s1">&#39;nW0a?W&#39;</span><span class="p">,</span> <span class="s1">&#39;Cu$?)(&#39;</span><span class="p">,</span> <span class="s1">&#39;URPQQh&#39;</span><span class="p">,</span> <span class="s1">&#39;$$0L&quot;-&#39;</span><span class="p">,</span> <span class="s1">&#39;uuL$Vr.&#39;</span><span class="p">,</span> <span class="s1">&#39;VFsEpr&#39;</span><span class="p">,</span> <span class="s1">&#39;8k^zVS9F&#39;</span><span class="p">,</span> <span class="s1">&#39;nGMF~-&#39;</span><span class="p">,</span> <span class="s1">&#39;fbz4+2`6&#39;</span><span class="p">,</span> <span class="s1">&#39;xn|&amp;;!&#39;</span><span class="p">,</span> <span class="s1">&#39;LLDW|T$$H&#39;</span><span class="p">,</span> <span class="s1">&#39;}</span><span class="se">\x0c</span><span class="s1">;G</span><span class="se">\x0c</span><span class="s1">v</span><span class="se">\x0c</span><span class="s1">P&#39;</span><span class="p">,</span> <span class="s1">&#39;9D$(rB9|$&#39;</span><span class="p">,</span> <span class="s1">&#39;Pt0$|L$&#39;</span><span class="p">,</span> <span class="s1">&#39;999hGlh`&#39;</span><span class="p">,</span> <span class="s1">&#39;@</span><span class="se">\x0c</span><span class="s1">@tDj&#39;</span><span class="p">,</span> <span class="s1">&#39;;t$,v-&#39;</span><span class="p">,</span> <span class="s1">&#39;PPPPPWS&#39;</span><span class="p">,</span> <span class="s1">&#39;PPPPPPPP&#39;</span><span class="p">,</span> <span class="s1">&#39;;q`&gt;|g&#39;</span><span class="p">,</span> <span class="s1">&#39;.gfids&#39;</span><span class="p">,</span> <span class="s1">&#39;x.IvPa&#39;</span><span class="p">,</span> <span class="s1">&#39;c~K.Rd[&#39;</span><span class="p">,</span> <span class="s1">&#39;zSSSSj&#39;</span><span class="p">,</span> <span class="s1">&#39;9&gt;t</span><span class="se">\x0b</span><span class="s1">WV&#39;</span><span class="p">,</span> <span class="s1">&#39;@.rsrc&#39;</span><span class="p">,</span> <span class="s1">&#39;j) </span><span class="se">\x0c</span><span class="s1">%8&#39;</span><span class="p">,</span> <span class="s1">&#39;t</span><span class="se">\x0c</span><span class="s1">;E</span><span class="se">\x0c</span><span class="s1">t&#39;</span><span class="p">,</span> <span class="s1">&#39;|$$t</span><span class="se">\x0c</span><span class="s1">x&#39;</span><span class="p">,</span> <span class="s1">&#39;&quot;#EIzT&#39;</span><span class="p">,</span> <span class="s1">&#39;SCY)</span><span class="se">\t</span><span class="s1">29&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\\</span><span class="s1">eK5.n&#39;</span><span class="p">,</span> <span class="s1">&#39;PP9E u:PPVWP&#39;</span><span class="p">,</span> <span class="s1">&#39;u</span><span class="se">\t</span><span class="s1">j</span><span class="se">\r</span><span class="s1">Zf&#39;</span><span class="p">,</span> <span class="s1">&#39;_^[ËL$&#39;</span><span class="p">,</span> <span class="s1">&#39;8`|FfJr2$o8&#39;</span><span class="p">,</span> <span class="s1">&#39;ilcSII&#39;</span><span class="p">,</span> <span class="s1">&#39;9gP)</span><span class="se">\x0c</span><span class="s1">D&#39;</span><span class="p">,</span> <span class="s1">&#39;(iry^]#&#39;</span><span class="p">,</span> <span class="s1">&#39;L$SLNd&#39;</span><span class="p">,</span> <span class="s1">&#39;;$܉</span><span class="se">\x0c</span><span class="s1">Ns$&#39;</span><span class="p">,</span> <span class="s2">&quot;&#39;`AjZ$&quot;</span><span class="p">,</span> <span class="s1">&#39;LL</span><span class="se">\\</span><span class="s1">jg%$&#39;</span><span class="p">,</span> <span class="s1">&#39;k</span><span class="se">\x0c</span><span class="s1">UQPXY]Y[&#39;</span><span class="p">,</span> <span class="s2">&quot;]</span><span class="se">\x0c</span><span class="s2">;3t&#39;&quot;</span><span class="p">,</span> <span class="s1">&#39;Dj^t</span><span class="se">\x0c</span><span class="s1">9$S&#39;</span><span class="p">,</span> <span class="s1">&#39;+/uc$v&#39;</span><span class="p">,</span> <span class="s1">&#39;aUG2,c/&amp;&#39;</span><span class="p">,</span> <span class="s1">&#39;7X=}Fj&#39;</span><span class="p">,</span> <span class="s1">&#39;$Ct0$D&#39;</span><span class="p">,</span> <span class="s1">&#39;T</span><span class="se">\t</span><span class="s1">LF2</span><span class="se">\\</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;@.data&#39;</span><span class="p">,</span> <span class="s1">&#39;)F9D</span><span class="se">\t</span><span class="s1">L&#39;</span><span class="p">,</span> <span class="s1">&#39;$WLV$tj&#39;</span><span class="p">,</span> <span class="s1">&#39;j Y+ȋE&#39;</span><span class="p">,</span> <span class="s1">&#39;^Akx{0Q&#39;</span><span class="p">,</span> <span class="s1">&#39;9tZP)%&#39;</span><span class="p">,</span> <span class="s1">&#39;t!kl $&#39;</span><span class="p">,</span> <span class="s1">&#39;~tmx0&gt;&#39;</span><span class="p">,</span> <span class="s2">&quot;U$=4!&#39;&quot;</span><span class="p">,</span> <span class="s1">&#39;f9:t!V&#39;</span><span class="p">,</span> <span class="s1">&#39;u4j</span><span class="se">\r</span><span class="s1">XSf&#39;</span><span class="p">,</span> <span class="s1">&#39;| $@HD&#39;</span><span class="p">,</span> <span class="s1">&#39;!This program cannot be run in DOS mode.&#39;</span><span class="p">,</span> <span class="s1">&#39;=;a&lt;uG&#39;</span><span class="p">,</span> <span class="s1">&#39;^L1</span><span class="se">\x0b</span><span class="s1">$$&#39;</span><span class="p">,</span> <span class="s1">&#39;(SUVWk&#39;</span><span class="p">,</span> <span class="s1">&#39;3</span><span class="se">\x0c</span><span class="s1">8_^]&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="host-search-by-domain-or-url">
+<h2>🌐 Host search by domain or url<a class="headerlink" href="#host-search-by-domain-or-url" title="Link to this heading"></a></h2>
+<section id="id1">
+<h3><strong>Returns</strong><a class="headerlink" href="#id1" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>is_safe (bool): Whether the host is safe or not.</p></li>
+</ul>
+<p>Example of search with domain:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">kasperskytip</span>
+
+<span class="n">ks</span> <span class="o">=</span> <span class="n">kasperskytip</span><span class="o">.</span><span class="n">kaspersky_tip</span><span class="p">()</span>
+<span class="n">site</span> <span class="o">=</span> <span class="n">ks</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s2">&quot;google.com&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">site</span><span class="o">.</span><span class="n">is_safe</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="kc">True</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="search-by-ip">
+<h2>🌐 Search by IP<a class="headerlink" href="#search-by-ip" title="Link to this heading"></a></h2>
+<section id="id2">
+<h3><strong>Returns</strong><a class="headerlink" href="#id2" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>is_safe (bool): Whether the IP is safe or not.</p></li>
+<li><p>status (str): The IP status.</p></li>
+<li><p>country_code (str): The country of the IP.</p></li>
+<li><p>hits_count (int): The number of hits the IP has.</p></li>
+<li><p>first_seen (datetime): The first time the IP was seen.</p></li>
+</ul>
+<p>Example of search with IP:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">kasperskytip</span>
+
+<span class="n">ks</span> <span class="o">=</span> <span class="n">kasperskytip</span><span class="o">.</span><span class="n">kaspersky_tip</span><span class="p">()</span>
+<span class="n">ip</span> <span class="o">=</span> <span class="n">ks</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s2">&quot;1.1.1.1&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">ip</span><span class="o">.</span><span class="n">is_safe</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="kc">True</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">ip</span><span class="o">.</span><span class="n">status</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">known</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">ip</span><span class="o">.</span><span class="n">country_code</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">AU</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">ip</span><span class="o">.</span><span class="n">hits_count</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="mi">100000</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">ip</span><span class="o">.</span><span class="n">first_seen</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="mi">2014</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">03</span> <span class="mi">13</span><span class="p">:</span><span class="mi">52</span><span class="p">:</span><span class="mi">00</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../index.html" class="btn btn-neutral float-left" title="Kaspersky TIP API documentation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="upload-file.html" class="btn btn-neutral float-right" title="Uploading a file for analysis" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Dmitry Kondrashov.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
